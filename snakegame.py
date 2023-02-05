@@ -198,6 +198,7 @@ game_over_font = pygame.font.Font(None, 100)
 
 SCREEN_UPDATE = pygame.USEREVENT
 pygame.time.set_timer(SCREEN_UPDATE, 150)
+pygame.display.set_caption("Snake wars")
 
 main_game = Main()
 
