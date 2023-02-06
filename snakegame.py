@@ -8,18 +8,13 @@ game_active = True
 
 class Fruit:
     def __init__(self):
-        self.reset()
+        self.randomize()
 
     def draw_fruit(self):
         fruit_rect = pygame.Rect(int(self.pos.x*cell_size), int(self.pos.y*cell_size), cell_size, cell_size)
-        pygame.draw.rect(screen, (255,0,0), fruit_rect)
+        pygame.draw.ellipse(screen, (255,0,0), fruit_rect)
     
     def randomize(self):
-        self.x = random.randint(1,cell_number-1)
-        self.y = random.randint(1,cell_number-1)
-        self.pos = Vector2(self.x, self.y) 
-
-    def reset(self):
         self.x = random.randint(1,cell_number-1)
         self.y = random.randint(1,cell_number-1)
         self.pos = Vector2(self.x, self.y) 
@@ -245,7 +240,7 @@ while True:
     
     if main_game.retry.check_click() == True:
        game_active = True
-       main_game.fruit.reset()
+       main_game.fruit.randomize()
        main_game.snake.reset((127, 0, 255))
        main_game.snake2.reset((0,128,128))
         
