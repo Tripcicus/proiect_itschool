@@ -2,7 +2,6 @@ import pygame
 import sys
 from pygame.math import Vector2
 import random
-import time
 
 game_active = True
 
